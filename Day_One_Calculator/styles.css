@@ -1,0 +1,103 @@
+ /* Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 10px;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      min-width: 280px;
+    }
+/* //Author: Abdur Rahaman Shishir| shishir01022003@gmail.com */
+
+    .calculator h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: clamp(1.5rem, 5vw, 1.8rem);
+    }
+
+    #display {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 15px;
+      text-align: right;
+      padding: 10px;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      border: none;
+      background: #f0f0f0;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(8px, 2vw, 10px);
+    }
+
+    button {
+      padding: clamp(10px, 3vw, 15px);
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      border: none;
+      border-radius: 10px;
+      background: #e0e0e0;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+      background: #d1d1d1;
+      transform: scale(1.05);
+    }
+
+    .operator {
+      background: #ff8c42;
+      color: #fff;
+    }
+
+    .equal {
+      background: #4caf50;
+      color: #fff;
+    }
+
+    .clear {
+      grid-column: span 4;
+      background: #e53935;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .calculator {
+        padding: 15px;
+      }
+      #display {
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .calculator {
+        min-width: 250px;
+      }
+    }

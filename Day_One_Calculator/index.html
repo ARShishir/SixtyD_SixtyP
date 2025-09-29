@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="calculator">
+    <h1>Simple Calculator</h1>
+    <form name="calc">
+      <input type="text" name="display" id="display" readonly>
+
+      <div class="buttons">
+        <button type="button" onclick="calc.display.value += '7'">7</button>
+        <button type="button" onclick="calc.display.value += '8'">8</button>
+        <button type="button" onclick="calc.display.value += '9'">9</button>
+        <button type="button" class="operator" onclick="calc.display.value += '/'">÷</button>
+
+        <button type="button" onclick="calc.display.value += '4'">4</button>
+        <button type="button" onclick="calc.display.value += '5'">5</button>
+        <button type="button" onclick="calc.display.value += '6'">6</button>
+        <button type="button" class="operator" onclick="calc.display.value += '*'">×</button>
+
+        <button type="button" onclick="calc.display.value += '1'">1</button>
+        <button type="button" onclick="calc.display.value += '2'">2</button>
+        <button type="button" onclick="calc.display.value += '3'">3</button>
+        <button type="button" class="operator" onclick="calc.display.value += '-'">−</button>
+
+        <button type="button" onclick="calc.display.value += '0'">0</button>
+        <button type="button" onclick="calc.display.value += '.'">.</button>
+        <button type="button" class="equal" onclick="calc.display.value = eval(calc.display.value)">=</button>
+        <button type="button" class="operator" onclick="calc.display.value += '+'">+</button>
+
+        <button type="button" class="clear" onclick="calc.display.value = ''">C</button>
+      </div>
+    </form>
+  </div>
+<!-- //Author: Abdur Rahaman Shishir| shishir01022003@gmail.com -->
+
+</body>
+</html>
