@@ -1,0 +1,161 @@
+:root {
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-border: rgba(255,255,255,0.12);
+  --transition-time: 0.3s;
+}
+
+/* Page background + center layout */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6b21a8 0%, #c084fc 100%);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111827;
+  transition: background var(--transition-time) ease;
+}
+/* Abdur Rahaman shishir  */
+/* App card */
+.app-card {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: background var(--transition-time) ease, border var(--transition-time) ease;
+}
+
+/* Dark theme */
+[data-bs-theme="dark"] body {
+  background: linear-gradient(135deg, #3b0764 0%, #6b21a8 100%);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .app-card {
+  background: rgba(17,24,39,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f3f4f6;
+}
+
+/* Task list styles */
+#task-list {
+  max-height: 56vh;
+}
+.list-group-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  cursor: pointer;
+}
+.list-group-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+[data-bs-theme="dark"] .list-group-item:hover {
+  box-shadow: 0 6px 18px rgba(255,255,255,0.08);
+}
+
+/* when completed */
+.list-group-item.completed {
+  opacity: 0.66;
+  text-decoration: line-through;
+}
+
+/* title and meta */
+.task-title {
+  font-weight: 600;
+  color: #111827;
+}
+
+[data-bs-theme="dark"] .task-title {
+  color: #f3f4f6;
+}
+
+.task-meta {
+  font-size: .8rem;
+  color: #4b5563;
+}
+
+[data-bs-theme="dark"] .task-meta {
+  color: #9ca3af;
+}
+
+/* badges for priority */
+.badge-priority {
+  font-size: .7rem;
+  text-transform: capitalize;
+}
+.priority-high {
+  background: #ffe4e6;
+  color: #be123c;
+  border: 1px solid rgba(190,18,60,0.08);
+}
+.priority-medium {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(146,64,14,0.06);
+}
+.priority-low {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid rgba(21,128,61,0.06);
+}
+
+[data-bs-theme="dark"] .priority-high {
+  background: #4c0519;
+  color: #fda4af;
+  border: 1px solid rgba(190,18,60,0.2);
+}
+[data-bs-theme="dark"] .priority-medium {
+  background: #422006;
+  color: #fde68a;
+  border: 1px solid rgba(120,53,15,0.2);
+}
+[data-bs-theme="dark"] .priority-low {
+  background: #052e16;
+  color: #bbf7d0;
+  border: 1px solid rgba(22,101,52,0.2);
+}
+
+/* right-panel details */
+#details-panel { min-height: 380px; }
+#details-empty {
+  margin-top: 48%;
+  transform: translateY(-50%);
+}
+
+/* inline editing row */
+.edit-row { display:flex; gap:8px; align-items:center; width:100%; }
+
+/* small screens - sticky add */
+@media (max-width: 767.98px) {
+  .app-card { border-radius: 0; }
+  #task-list { max-height: calc(60vh - 120px); }
+  .list-group-item { padding: 12px; }
+}
+
+/* smooth transitions */
+.progress-bar { transition: width 0.4s ease; }
+
+/* Improved responsiveness */
+@media (max-width: 991.98px) {
+  .row > * {
+    margin-bottom: 1rem;
+  }
+  #task-list {
+    max-height: calc(100vh - 300px);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+  #add-input, #add-priority, #add-due, #add-btn {
+    font-size: 0.9rem;
+  }
+}
