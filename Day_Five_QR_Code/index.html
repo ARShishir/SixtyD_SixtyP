@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Generator — By Abdur Rahaman Shishir</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">QR</div>
+      <div>
+        <h1>QR Generator</h1>
+        <p class="lead">Generate a QR code from your text or link. Made By Abdur Rahaman Shishir</p>
+      </div>
+    </div>
+<!-- Author: Abdur Rahaman Shishir -->
+    <div class="card">
+      <label>Enter text or URL</label>
+      <textarea id="textInput" rows="4" placeholder="Enter text or link here..."></textarea>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn" id="genBtn">Generate QR</button>
+        <button class="btn secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="qr-area">
+        <canvas id="qrCanvas"></canvas>
+        <div id="qrMeta" class="meta">No QR yet</div>
+        <button class="btn" id="downloadBtn" disabled>Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
