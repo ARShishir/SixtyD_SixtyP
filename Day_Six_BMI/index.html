@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BMI ক্যালকুলেটর (বাংলা) By Abdur Rahaman Shishir</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <main class="wrap">
+    <div class="card" role="region" aria-labelledby="title">
+      <header>
+        <div>
+          <h1 id="title">BMI ক্যালকুলেটর</h1>
+          <p>উচ্চতা (সেন্টিমিটার) ও ওজন (কেজি) দিয়ে আপনার BMI দ্রুত জানুন — ফলাফল তথ্যভিত্তিক, চিকিৎসা পরামর্শ নয়।</p>
+        </div>
+      </header>
+      <form id="bmiForm" novalidate>
+        <div>
+          <label for="weight">ওজন (কেজি)</label>
+          <input id="weight" name="weight" type="number" min="10" max="500" step="0.1" required>
+        </div>
+        <div>
+          <label for="height">উচ্চতা (সেমি)</label>
+          <input id="height" name="height" type="number" min="50" max="300" step="0.1" required>
+        </div>
+        <div>
+          <label for="age">বয়স (বছর)</label>
+          <input id="age" name="age" type="number" min="1" max="120" step="1">
+        </div>
+        <div>
+          <label for="sex">লিঙ্গ</label>
+          <select id="sex" name="sex">
+            <option value="unspecified">নির্বাচন করুন</option>
+            <option value="male">পুরুষ</option>
+            <option value="female">মহিলা</option>
+          </select>
+        </div>
+        <div class="full controls">
+          <button type="submit" class="btn-primary">BMI হিসাব করুন</button>
+          <button type="button" id="resetBtn" class="btn-ghost">রিসেট</button>
+        </div>
+      </form>
+      <section id="resultArea" class="result" aria-live="polite" aria-atomic="true">
+        <div class="bmi-value" id="bmiText">আপনার BMI এখানে দেখা যাবে</div>
+        <div class="bmi-category" id="bmiCategory">---</div>
+        <div class="note" id="bmiNote">বিস্তারিত ব্যাখ্যা ও চার্ট নিচে।</div>
+        <div class="chart-wrap">
+          <div id="bmiChart" class="chart" role="img"></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-top:8px;color:#334155">
+            <div>নিম্ন</div>
+            <div>স্বাভাবিক</div>
+            <div>ওভারওয়েট</div>
+            <div>স্থূল</div>
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <strong>বয়স/লিঙ্গ নির্দেশ:</strong>
+          <p id="ageSexAdvice" class="note">যদি আপনার বয়স < 20 বছর হয়, BMI ব্যাখ্যা ভিন্ন হতে পারে।</p>
+        </div>
+        <!-- Author: Abdur Rahaman Shishir  -->
+      </section>
+      <section id="childAdvice" class="child-advice" style="display:none">
+        <h3>বয়স ২০ বছরের নিচে হলে BMI ব্যাখ্যা</h3>
+        <p>শিশু ও কিশোরদের BMI আলাদাভাবে মূল্যায়ন করা হয় (percentile অনুযায়ী)। নিচের নির্দেশিকা দেখুন:</p>
+        <ul>
+          <li>৫ম পার্সেন্টাইলের নিচে: নিম্ন ওজন</li>
+          <li>৫ম থেকে ৮৫তম পার্সেন্টাইল: স্বাভাবিক</li>
+          <li>৮৫তম থেকে ৯৫তম পার্সেন্টাইল: অতিরিক্ত ওজন</li>
+          <li>৯৫তম পার্সেন্টাইলের উপরে: স্থূল</li>
+        </ul>
+        <p>এগুলো বয়স ও লিঙ্গ অনুযায়ী পরিবর্তিত হয়। সঠিক ফলাফলের জন্য শিশুরোগ বিশেষজ্ঞের পরামর্শ নিন।</p>
+      </section>
+      <section class="food-list">
+        <h2>পুষ্টিকর খাবারের তালিকা</h2>
+        <ul>
+          <li>শাকসবজি: পালং, লাল শাক, বাঁধাকপি, গাজর</li>
+          <li>ফলমূল: কলা, আপেল, কমলা, আম</li>
+          <li>প্রোটিন: ডিম, মাছ, মুরগি, ডাল, ছোলা</li>
+          <li>দুধ ও দুগ্ধজাত: দুধ, দই, পনির</li>
+          <li>শস্য: লাল চাল, ওটস, গমের রুটি</li>
+          <li>স্বাস্থ্যকর ফ্যাট: বাদাম, কাজু, অলিভ অয়েল</li>
+        </ul>
+        <p class="note">এই খাবারগুলো সুষমভাবে প্রতিদিনের খাদ্যতালিকায় রাখলে স্বাস্থ্য ভালো থাকবে।</p>
+      </section>
+      <footer>
+        <small>নোট: এই টুলটি কেবল তথ্যচিত্র; নির্দিষ্ট স্বাস্থ্য পরামর্শের জন্য প্রফেশনাল ডাক্তার দেখুন।</small>
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

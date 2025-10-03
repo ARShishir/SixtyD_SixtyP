@@ -1,0 +1,253 @@
+
+  /* ==== Base Reset ==== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", "Noto Sans", Arial;
+  background: linear-gradient(180deg, #f7fafc, #eef2ff);
+  color: #0b1220;
+}
+
+/* ==== Layout ==== */
+.wrap {
+  max-width: 920px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(8,20,40,0.08);
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+/* Author: Abdur Rahaman Shishir  */
+header p {
+  margin: 0;
+  color: #475569;
+  font-size: .95rem;
+}
+
+/* ==== Form ==== */
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+label {
+  display: block;
+  font-size: .9rem;
+  margin-bottom: 6px;
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eef8;
+  font-size: 1rem;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+}
+
+/* ==== Result ==== */
+.result {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  border: 1px solid #eef2ff;
+}
+
+.bmi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.bmi-category {
+  font-size: 1.05rem;
+  margin-top: 6px;
+}
+
+.note {
+  font-size: .9rem;
+  color: #475569;
+  margin-top: 8px;
+}
+
+/* ==== Chart ==== */
+.chart-wrap {
+  margin-top: 18px;
+}
+
+.chart {
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.range {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  color: #07203a;
+  font-weight: 600;
+}
+
+.r-under { background: linear-gradient(90deg, #dbeafe, #bfdbfe); }
+.r-normal { background: linear-gradient(90deg, #d1fae5, #bbf7d0); }
+.r-over   { background: linear-gradient(90deg, #fef08a, #fde68a); }
+.r-obese  { background: linear-gradient(90deg, #fecaca, #fca5a5); }
+
+/* Marker (pin + triangle) */
+.marker {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.marker .pin {
+  font-size: .8rem;
+  background: #0b1220;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 6px;
+  position: absolute;
+  transform: translateX(-50%);
+  top: -28px;
+  white-space: nowrap;
+}
+
+.marker .triangle {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 8px solid #0b1220;
+  position: absolute;
+  transform: translateX(-50%);
+  top: -6px;
+}
+
+/* ==== Food List ==== */
+.food-list {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.food-list h2 {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+}
+
+.food-list ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+/* ==== Child Advice ==== */
+.child-advice {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+.child-advice h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #b45309;
+}
+
+.child-advice ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: #7c2d12;
+}
+
+/* ==== Utility ==== */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
+footer {
+  margin-top: 14px;
+  font-size: .85rem;
+  color: #475569;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 720px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
