@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll to Top Button</title>
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  <header>
+    <h1>Scroll-to-Top Button </h1>
+    <p>By Abdur Rahaman Shishir</p>
+  </header>
+
+  <main>
+    <h2>🚀 Project Title: Scroll-to-Top Button</h2>
+
+    <h3>🔹 Introduction</h3>
+    <p>
+      In modern web design, user experience (UX) plays a crucial role in keeping visitors engaged on a website.
+      One of the simplest yet effective UX features is a <strong>Scroll-to-Top Button</strong>.
+      It allows users to instantly return to the top of long web pages with a single click, saving time and effort.
+    </p>
+
+    <h3>🔹 Project Objectives</h3>
+    <ul>
+      <li>Enhance user experience with simple navigation.</li>
+      <li>Implement a button that appears dynamically on scroll.</li>
+      <li>Ensure smooth, responsive scroll animations.</li>
+      <li>Keep the code lightweight, clean, and reusable.</li>
+    </ul>
+
+    <h3>🔹 Technologies Used</h3>
+    <ul>
+      <li><b>HTML</b> — for structure and content layout.</li>
+      <li><b>CSS</b> — for visual design, shadows, gradients, and responsiveness.</li>
+      <li><b>JavaScript</b> — for scroll detection and smooth scrolling behavior.</li>
+    </ul>
+
+    <h3>🔹 How It Works</h3>
+    <p> 
+      <!-- Author : Abdur Rahaman Shishir -->
+      When the user scrolls down more than 300 pixels, the button appears at the bottom-right corner.
+      On click, a JavaScript function triggers a smooth animation back to the top of the page.
+    </p>
+
+    <h3>🔹 Example Code Snippet</h3>
+    <pre><code>
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+    </code></pre>
+
+    <h3>🔹 Key Features</h3>
+    <ul>
+      <li>Smooth Scroll Animation</li>
+      <li>Responsive and Mobile-Friendly</li>
+      <li>Dynamic Visibility</li>
+      <li>Elegant Gradient UI</li>
+      <li>Minimal Code — No Libraries</li>
+    </ul>
+
+    <h3>🔹 Advantages</h3>
+    <ul>
+      <li>Improves website accessibility.</li>
+      <li>Enhances overall user satisfaction.</li>
+      <li>Integrates easily into existing websites.</li>
+    </ul>
+
+    <h3>🔹 Conclusion</h3>
+    <p>
+      The Scroll-to-Top Button is a small but impactful addition to modern websites.
+      It reflects thoughtful UX design by offering convenience and visual appeal.
+      Using only HTML, CSS, and JavaScript, this project is efficient, responsive, and visually modern —
+      a great example of functional simplicity in frontend web development.
+    </p>
+  </main>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+
+  <footer>
+    © 2025 Scroll-to-Top Project by Abdur Rahaman Shishir
+  </footer>
+
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+ <script src="script.js"></script>
+
+</body>
+</html>
