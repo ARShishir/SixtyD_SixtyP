@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Music Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <h1>Interactive Music Visualizer</h1>
+  <input type="file" id="audioFileInput" accept="audio/*" />
+  <div class="controls">
+    <button id="playPauseBtn" disabled>Play</button>
+    <div class="time">
+      <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+      <!-- Author: Abdur Rahaman Shishir -->
+    </div>
+  </div>
+  <canvas id="visualizer"></canvas>
+  <script src="script.js"></script>
+
+</body>
+</html>
