@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Attendance System - Teacher & Student By Abdur Rahaman Shishir</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">Attendance System  </div>
+      <div id="headerControls" class="row"></div>
+    </header>
+    
+
+    <!-- Login / Role select -->
+    <div id="screenLogin" class="card">
+      <h3>Welcome — choose role to continue</h3>
+      <div class="grid" style="grid-template-columns:1fr 1fr; margin-top:8px;">
+        <div class="card">
+          <h4>Teacher</h4>
+          <p class="small-muted">Login as teacher to manage students, mark attendance and post notices.</p>
+          <div class="row" style="margin-top:8px;">
+            <input id="teacherName" placeholder="Teacher name  " type="text"/>
+            <input id="teacherPass" placeholder="Password  " type="text"/>
+            <button class="btn-primary" onclick="teacherLogin()">Login / Create</button>
+          </div>
+        </div>
+<!-- Author: Abdur Rahaman Shishir -->
+        <div class="card">
+          <h4>Student</h4>
+          <p class="small-muted">Select your name to view your attendance & notices.</p>
+          <div style="margin-top:8px;">
+            <select id="studentSelect"></select>
+            <div style="margin-top:8px;">
+              <button class="btn-primary" onclick="studentLogin()">Enter as Student</button>
+            </div>
+            <div class="small-muted" style="margin-top:8px;">If no student exists create one from teacher panel.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App Container (hidden until login) -->
+    <div id="screenApp" style="display:none;">
+      <!-- Nav -->
+      <nav class="tabs" id="mainTabs"></nav>
+
+      <!-- TEACHER DASHBOARD -->
+      <div id="tabTeacher" style="display:none;">
+        <div class="grid" style="grid-template-columns: 1fr 380px; gap:14px;">
+          <!-- Left: Students & Attendance -->
+          <div class="card">
+            <h3>Students</h3>
+            <div class="row" style="margin-top:8px;">
+              <input id="newStudentName" placeholder="Student name"/>
+              <input id="newStudentRoll" placeholder="Roll (optional)" style="width:120px"/>
+              <button class="btn-success" onclick="addStudent()">Add</button>
+            </div>
+
+            <div style="margin-top:12px;">
+              <table id="studentsTable">
+                <thead><tr><th>Name</th><th>Roll</th><th class="center">Action</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <hr/>
+
+            <h4>Mark Attendance</h4>
+            <div class="row">
+              <label class="small-muted">Date: </label>
+              <input id="attDate" type="date" />
+              <div class="right">
+                <button class="btn-primary" onclick="loadAttendanceForDate()">Load</button>
+                <button class="btn-success" onclick="saveAttendance()">Save Attendance</button>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <table id="attTable">
+                <thead><tr><th>Student</th><th>Roll</th><th class="center">Present</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right: Notices & Reports -->
+          <div>
+            <div class="card">
+              <h4>Post Notice / Homework</h4>
+              <input id="noticeTitle" placeholder="Title"/>
+              <textarea id="noticeText" rows="4" placeholder="Write notice or homework..."></textarea>
+              <div style="margin-top:8px;" class="row">
+                <button class="btn-primary" onclick="postNotice()">Publish</button>
+                <button class="btn-danger right" onclick="clearNotices()">Clear All Notices</button>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:12px;">
+              <h4>Notices</h4>
+              <div id="noticeList"></div>
+            </div>
+          
+            <div  class="card"  style="margin-top:12px;">
+                <h2>📊 Student Attendance Report</h2>
+                <button onclick="showReport()" style="margin-bottom:15px; padding:10px 15px; border:none; background:#28a745; color:white; border-radius:6px; cursor:pointer;">Show Report</button>
+                  <table id="reportTable">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th>Total Days</th>
+                    <th>Dates Attended</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+                </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDENT DASHBOARD -->
+      <div id="tabStudent" style="display:none;">
+        <div class="grid" style="grid-template-columns: 1fr 360px; gap:12px;">
+          <div class="card">
+            <h3>My Attendance</h3>
+            <div id="studentInfo" class="small-muted"></div>
+            <div style="margin-top:10px;">
+              <table id="studentAttTable">
+                <thead><tr><th>Sl</th><th>Date</th><th class="center">Status</th><th class="center">Time</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Notices / Homework</h3>
+            <div id="studentNotices"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+   
+<!-- Footer -->
+<footer style="
+    width: 100%;
+    background: #f1f1f1;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+">
+  Developed by 
+  <a href="https://arshishir.github.io/MinusOne/" target="_blank" style="color: #000000; text-decoration: none;">
+    Abdur Rahaman Shishir
+  </a>
+</footer>
+
+</body>
+</html>

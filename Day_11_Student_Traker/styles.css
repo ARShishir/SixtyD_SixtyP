@@ -1,0 +1,289 @@
+   /* ======================================
+   Bootstrap base overrides & custom style
+====================================== */
+
+/* Body & App Layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0d6efd;
+}
+
+/* Tabs */
+nav.tabs {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+}
+/*Author: Abdur Rahaman Shishir  */
+.tab {
+    padding: 10px 16px;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Buttons General */
+button {
+    font-weight: 600;
+    font-size: 1rem;         /* Font size bigger */
+    padding: 0.7rem 1.2rem;  /* Bigger height & width */
+    border-radius: 0.6rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 6px 0;           /* Vertical spacing between buttons */
+}
+
+/* Hover effects */
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Specific Button Colors */
+.btn-primary {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+}
+
+.btn-success {
+    background: #198754;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #157347;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #bb2d3b;
+}
+
+.btn-warning {
+    background: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+}
+
+/* Spacing between buttons in Post Notice / Homework section */
+#tabTeacher .card button {
+    margin-right: 10px; /* Horizontal spacing */
+    margin-top: 8px;    /* Vertical spacing */
+}
+
+/* Textarea & input spacing for Post Notice */
+#noticeTitle, #noticeText {
+    margin-bottom: 10px;
+}
+
+/* Inputs */
+input, select, textarea {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+    outline: none;
+}
+
+/* Container & Card Responsive */
+#tabTeacher .card {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Input Fields Responsive */
+#tabTeacher #noticeTitle,
+#tabTeacher #noticeText {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+/* Buttons Responsive */
+#tabTeacher .card button {
+    width: 100%;           /* Full width on mobile */
+    margin-top: 10px;
+    padding: 12px 0;
+}
+
+/* Notice List Responsive */
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Inline Alerts on small screens */
+.alert {
+    width: 90%;
+    max-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+
+    /* Card padding smaller on mobile */
+    #tabTeacher .card {
+        padding: 15px;
+    }
+    
+    /* Buttons stacked */
+    #tabTeacher .card button {
+        width: 100%;
+    }
+
+    /* Input font smaller on mobile */
+    #tabTeacher #noticeTitle,
+    #tabTeacher #noticeText {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    /* Alerts top spacing */
+    .alert {
+        top: 15px;
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background: #e9ecef;
+    font-weight: 600;
+}
+
+td.center {
+    text-align: center;
+}
+
+/* Notices */
+.notice {
+    border-left: 4px solid #0d6efd;
+    background: #e7f1ff;
+    padding: 10px 15px;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.notice:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Alerts (inline) */
+.alert {
+    padding: 12px 16px;
+    border-radius: 0.5rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+    display: none; /* hidden by default */
+    animation: fadeIn 0.4s forwards;
+}
+
+.alert.show {
+    display: block;
+}
+
+.alert-success { background: #d1e7dd; color: #0f5132; }
+.alert-danger { background: #f8d7da; color: #842029; }
+.alert-warning { background: #fff3cd; color: #664d03; }
+.alert-info { background: #cff4fc; color: #055160; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .row, .grid {
+        flex-direction: column !important;
+        gap: 12px;
+    }
+    .right {
+        margin-left: 0;
+    }
+}
