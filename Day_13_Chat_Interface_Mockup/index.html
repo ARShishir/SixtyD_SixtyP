@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface Mockup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-avatar"></div>
+            <div class="chat-info">
+                <h3>Virtual Assistant</h3>
+                <p>Online</p>
+            </div>
+            <div class="chat-actions">
+                <button class="action-btn">⋮</button>
+            </div>
+        </div>
+        <!-- Author : Abdur Rahaman Shishir  -->
+        
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here by JavaScript -->
+        </div>
+        
+        <div class="chat-input-container">
+            <div class="input-actions">
+                <button class="icon-btn">📎</button>
+                <button class="icon-btn">😊</button>
+            </div>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type a message...">
+            <button class="send-btn" id="sendBtn">➤</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
